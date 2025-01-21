@@ -9,7 +9,7 @@ services:
       MYSQL_USER: delmondes
       MYSQL_PASSWORD: root
     ports:
-      - "3321:3321"
+      - "3306:3306"
     volumes:
       - webflux_data:/var/lib/mysql
 volumes:
