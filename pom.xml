@@ -22,6 +22,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-tools</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>io.asyncer</groupId>
 			<artifactId>r2dbc-mysql</artifactId>
 			<version>${r2dbc.version}</version>
