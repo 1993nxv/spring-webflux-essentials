@@ -29,8 +29,12 @@ public class AnimeController {
     @GetMapping("{id}")
     public Mono<Anime> findById(@PathVariable int id){
         return animeService.findById(id)
-                .switchIfEmpty(Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "Anime não encontrado")))
+                .switchIfEmpty(monoResponseStatusNotFoundException())
                 .log();
+    }
+
+    public <T> Mono<T> monoResponseStatusNotFoundException(){
+        return Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "Anime não encontrado"));
     }
 
 }
