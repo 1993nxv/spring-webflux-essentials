@@ -35,9 +35,13 @@ public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
     }
 
     private Mono<ServerResponse> formatErrorResponse(ServerRequest request){
-        String query = request.uri().getQuery();
+//        String query = request.uri().getQuery();
 
-        ErrorAttributeOptions errorAttributeOptions = isTraceEnable(query) ?
+//        ErrorAttributeOptions errorAttributeOptions = isTraceEnable(query) ?
+//                ErrorAttributeOptions.of(ErrorAttributeOptions.Include.STACK_TRACE) :
+//                ErrorAttributeOptions.defaults();
+
+        ErrorAttributeOptions errorAttributeOptions = isTraceEnabled(request) ?
                 ErrorAttributeOptions.of(ErrorAttributeOptions.Include.STACK_TRACE) :
                 ErrorAttributeOptions.defaults();
 
@@ -53,7 +57,7 @@ public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
                 .body(BodyInserters.fromValue(errorAttributesMap));
     }
 
-    private boolean isTraceEnable(String query){
-        return !StringUtils.isEmpty(query) && query.contains("trace=true");
-    }
+//    private boolean isTraceEnable(String query){
+//        return !StringUtils.isEmpty(query) && query.contains("trace=true");
+//    }
 }
