@@ -8,6 +8,3 @@ logging:
     io.r2dbc.mysql.QUERY: DEBUG   # Logs das consultas SQL
     io.r2dbc.mysql.PARAM: DEBUG   # Logs dos parâmetros das consultas
     org.springframework.r2dbc.core: DEBUG  # Logs das operações do Spring Data R2DBC
-server:
-  error:
-    include-stacktrace: on_param
