@@ -32,6 +32,6 @@ public class AnimeService {
         return findById(anime.getId())
                 .map(animeFound -> anime.withId(animeFound.getId()))
                 .flatMap(animeRepository::save)
-                .thenEmpty(Mono.empty());
+                .then();
     }
 }
