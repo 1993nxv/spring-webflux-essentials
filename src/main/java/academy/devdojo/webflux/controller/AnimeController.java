@@ -43,6 +43,12 @@ public class AnimeController {
         return animeService.update(anime.withId(id));
     }
 
+    @DeleteMapping(path = "{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Mono<Void> update(@PathVariable int id){
+        return animeService.delete(id);
+    }
+
     public <T> Mono<T> monoResponseStatusNotFoundException(){
         return Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "Anime não encontrado"));
     }
