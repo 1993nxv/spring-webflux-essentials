@@ -8,13 +8,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@With
 @Table("anime")
 public class Anime {
 
+    @With
     @Id
     @JsonProperty("id")
     private Integer id;
