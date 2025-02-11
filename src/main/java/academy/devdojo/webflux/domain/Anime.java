@@ -13,10 +13,10 @@ import org.springframework.data.relational.core.mapping.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@With
 @Table("anime")
 public class Anime {
 
-    @With
     @Id
     @JsonProperty("id")
     private Integer id;
