@@ -7,9 +7,10 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Data
+
+@EqualsAndHashCode
+@ToString
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @With
 @Table("anime")
@@ -17,10 +18,18 @@ public class Anime {
 
     @Id
     @JsonProperty("id")
-    private Integer id;
+    private final Integer id;
 
     @NotNull
     @NotEmpty(message = "O nome não pode ficar em branco.")
     @JsonProperty("name")
-    private String name;
+    private final String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
