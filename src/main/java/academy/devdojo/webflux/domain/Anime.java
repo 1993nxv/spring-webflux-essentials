@@ -8,8 +8,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
